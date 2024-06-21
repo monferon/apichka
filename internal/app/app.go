@@ -1,6 +1,8 @@
 package app
 
-import "apichka/config"
+import (
+	"apichka/config"
+)
 
 func Run(cfg *config.Config) {
 
