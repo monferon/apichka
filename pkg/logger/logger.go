@@ -1,6 +1,11 @@
 package logger
 
-import "log/slog"
+import (
+	"fmt"
+	"log/slog"
+	"os"
+	"strings"
+)
 
 type Interface interface {
 	Debug(message interface{}, args ...interface{})
@@ -16,27 +21,70 @@ type Logger struct {
 
 // var _ Interface = (*Logger)(nil)
 
+func NewLogger(level string) *Logger {
+	lvl := new(slog.LevelVar)
+
+	var l slog.Level
+
+	switch strings.ToLower(level) {
+	case "debug":
+		l = slog.LevelDebug
+	case "info":
+		l = slog.LevelInfo
+	case "warn":
+		l = slog.LevelWarn
+	case "error":
+		l = slog.LevelError
+	default:
+		l = slog.LevelInfo
+	}
+
+	lvl.Set(l)
+
+	logger := slog.New(slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{
+		Level: lvl,
+	}))
+
+	return &Logger{logger: logger}
+}
+
 func (l *Logger) Debug(message interface{}, args ...interface{}) {
-	//TODO implement me
-	panic("implement m	e")
+	l.sendMessage("debug", message, args...)
 }
 
 func (l *Logger) Info(message string, args ...interface{}) {
-	//TODO implement me
-	panic("implement me")
+	l.log(message, args...)
 }
 
 func (l *Logger) Warn(message string, args ...interface{}) {
-	//TODO implement me
-	panic("implement me")
+	l.log(message, args...)
 }
 
 func (l *Logger) Error(message interface{}, args ...interface{}) {
-	//TODO implement me
-	panic("implement me")
+	l.sendMessage("error", message, args...)
 }
 
 func (l *Logger) Fatal(message interface{}, args ...interface{}) {
-	//TODO implement me
-	panic("implement me")
+	l.sendMessage("fatal", message, args...)
+
+	os.Exit(1)
+}
+
+func (l *Logger) log(message string, args ...interface{}) {
+	if len(args) == 0 {
+		l.logger.Info(message)
+	} else {
+		l.logger.Info(message, args...)
+	}
+}
+
+func (l *Logger) sendMessage(level string, message interface{}, args ...interface{}) {
+	switch msg := message.(type) {
+	case error:
+		l.log(msg.Error(), args...)
+	case string:
+		l.log(msg, args...)
+	default:
+		l.log(fmt.Sprintf("%s message %v has unknown type %v", level, message, msg), args...)
+	}
 }
