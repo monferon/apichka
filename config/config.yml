@@ -1,0 +1,19 @@
+app:
+  name: 'go-api'
+  version: '1.0.0'
+
+http:
+  port: '8080'
+
+logger:
+  log_level: 'debug'
+  rollbar_env: 'go-api'
+
+postgres:
+  URL: ""
+  user: ""
+  password: ""
+  port: ""
+  name: ""
+  host: ""
+  pool_max: 2
