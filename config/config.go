@@ -32,12 +32,14 @@ type (
 
 	// PG -.
 	PG struct {
-		PoolMax  int    `env-required:"true" yaml:"pool_max" env:"PG_POOL_MAX"`
-		User     string `env-required:"true" yaml:"user" env:"PG_USER"`
-		Password string `env-required:"true" yaml:"password" env:"PG_PASSWORD"`
-		Port     string `env-required:"true" yaml:"port" env:"PG_PORT"`
-		DbName   string `env-required:"true" yaml:"name" env:"PG_DB"`
-		Host     string `env-required:"true" yaml:"host" env:"PG_HOST"`
+		PoolMax int `yaml:"pool_max" env:"PG_POOL_MAX" env-required:"true"`
+		//URL     string `env-required:"false" env:"PG_URL"`
+
+		//User     string `env-required:"true" yaml:"user" env:"PG_USER"`
+		//Password string `env-required:"true" yaml:"password" env:"PG_PASSWORD"`
+		//Port     string `env-required:"true" yaml:"port" env:"PG_PORT"`
+		//DbName   string `env-required:"true" yaml:"name" env:"PG_DB"`
+		//Host     string `env-required:"true" yaml:"host" env:"PG_HOST"`
 	}
 )
 

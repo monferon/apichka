@@ -1,9 +1,9 @@
 package main
 
 import (
-	"apichka/config"
-	"apichka/internal/app"
 	"fmt"
+	"github.com/monferon/apichka/config"
+	"github.com/monferon/apichka/internal/app"
 )
 
 func main() {

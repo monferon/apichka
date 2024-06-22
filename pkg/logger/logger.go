@@ -24,22 +24,22 @@ type Logger struct {
 func NewLogger(level string) *Logger {
 	lvl := new(slog.LevelVar)
 
-	var l slog.Level
+	var log slog.Level
 
 	switch strings.ToLower(level) {
 	case "debug":
-		l = slog.LevelDebug
+		log = slog.LevelDebug
 	case "info":
-		l = slog.LevelInfo
+		log = slog.LevelInfo
 	case "warn":
-		l = slog.LevelWarn
+		log = slog.LevelWarn
 	case "error":
-		l = slog.LevelError
+		log = slog.LevelError
 	default:
-		l = slog.LevelInfo
+		log = slog.LevelInfo
 	}
 
-	lvl.Set(l)
+	lvl.Set(log)
 
 	logger := slog.New(slog.NewTextHandler(os.Stderr, &slog.HandlerOptions{
 		Level: lvl,

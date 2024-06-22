@@ -10,10 +10,5 @@ logger:
   rollbar_env: 'go-api'
 
 postgres:
-  URL: ""
-  user: ""
-  password: ""
-  port: ""
-  name: ""
-  host: ""
+  PG_URL: "postgres://user:pass@localhost:5432/postgres"
   pool_max: 2
