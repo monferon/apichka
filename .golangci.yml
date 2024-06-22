@@ -1,0 +1,276 @@
+linters-settings:
+  gci:
+    prefix: github.com/monferon/apichka
+  dupl:
+    threshold: 100
+  errorlint:
+    errorf: true
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  exhaustive:
+    check-generated: false
+    default-signifies-exhaustive: false
+  funlen:
+    lines: 65
+    statements: 40
+  gocognit:
+    min-complexity: 15
+  gocyclo:
+    min-complexity: 10
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - experimental
+      - opinionated
+      - performance
+      - style
+    disabled-checks:
+      - dupImport
+      - unnecessaryBlock
+  gofumpt:
+    extra-rules: true
+  govet:
+    shadow: true
+  misspell:
+    locale: US
+  nestif:
+    min-complexity: 4
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+
+linters:
+  disable-all: true
+  enable:
+    - asasalint
+    - asciicheck
+    - bidichk
+    - bodyclose
+    - canonicalheader
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - cyclop
+    - decorder
+#    - depguard
+    - dogsled
+    - dupl
+    - dupword
+    - durationcheck
+    - err113
+    - errcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - exhaustive
+    - exhaustruct
+    - exportloopref
+    - fatcontext
+    - forbidigo
+    - forcetypeassert
+    - funlen
+    - gci
+    - ginkgolinter
+    - gocheckcompilerdirectives
+    - gochecknoglobals
+    - gochecknoinits
+    - gochecksumtype
+    - gocognit
+    - goconst
+    - gocritic
+    - gocyclo
+    - godot
+    - godox
+    - gofmt
+    - gofumpt
+    - goheader
+    - goimports
+    - gomoddirectives
+    - gomodguard
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - gosmopolitan
+    - govet
+    - grouper
+    - importas
+    - inamedparam
+    - ineffassign
+    - interfacebloat
+    - intrange
+    - ireturn
+    - lll
+    - loggercheck
+    - maintidx
+    - makezero
+    - mirror
+    - misspell
+    - mnd
+    - musttag
+    - nakedret
+    - nestif
+    - nilerr
+    - nilnil
+    - nlreturn
+    - noctx
+    - nolintlint
+    - nonamedreturns
+    - nosprintfhostport
+    - paralleltest
+    - perfsprint
+    - prealloc
+    - predeclared
+    - promlinter
+    - protogetter
+    - reassign
+    - revive
+    - rowserrcheck
+    - sloglint
+    - spancheck
+    - sqlclosecheck
+    - staticcheck
+    - stylecheck
+    - tagalign
+    - tagliatelle
+    - tenv
+    - testableexamples
+    - testifylint
+    - testpackage
+    - thelper
+    - tparallel
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - usestdlibvars
+    - varnamelen
+    - wastedassign
+    - whitespace
+    - wrapcheck
+    - wsl
+    - zerologlint
+#  disable:
+#    - asasalint
+#    - asciicheck
+#    - bidichk
+#    - bodyclose
+#    - canonicalheader
+#    - containedctx
+#    - contextcheck
+#    - copyloopvar
+#    - cyclop
+#    - decorder
+#    - depguard
+#    - dogsled
+#    - dupl
+#    - dupword
+#    - durationcheck
+#    - err113
+#    - errcheck
+#    - errchkjson
+#    - errname
+#    - errorlint
+#    - execinquery
+#    - exhaustive
+#    - exhaustruct
+#    - exportloopref
+#    - fatcontext
+#    - forbidigo
+#    - forcetypeassert
+#    - funlen
+#    - gci
+#    - ginkgolinter
+#    - gocheckcompilerdirectives
+#    - gochecknoglobals
+#    - gochecknoinits
+#    - gochecksumtype
+#    - gocognit
+#    - goconst
+#    - gocritic
+#    - gocyclo
+#    - godot
+#    - godox
+#    - gofmt
+#    - gofumpt
+#    - goheader
+#    - goimports
+#    - gomoddirectives
+#    - gomodguard
+#    - goprintffuncname
+#    - gosec
+#    - gosimple
+#    - gosmopolitan
+#    - govet
+#    - grouper
+#    - importas
+#    - inamedparam
+#    - ineffassign
+#    - interfacebloat
+#    - intrange
+#    - ireturn
+#    - lll
+#    - loggercheck
+#    - maintidx
+#    - makezero
+#    - mirror
+#    - misspell
+#    - mnd
+#    - musttag
+#    - nakedret
+#    - nestif
+#    - nilerr
+#    - nilnil
+#    - nlreturn
+#    - noctx
+#    - nolintlint
+#    - nonamedreturns
+#    - nosprintfhostport
+#    - paralleltest
+#    - perfsprint
+#    - prealloc
+#    - predeclared
+#    - promlinter
+#    - protogetter
+#    - reassign
+#    - revive
+#    - rowserrcheck
+#    - sloglint
+#    - spancheck
+#    - sqlclosecheck
+#    - staticcheck
+#    - stylecheck
+#    - tagalign
+#    - tagliatelle
+#    - tenv
+#    - testableexamples
+#    - testifylint
+#    - testpackage
+#    - thelper
+#    - tparallel
+#    - typecheck
+#    - unconvert
+#    - unparam
+#    - unused
+#    - usestdlibvars
+#    - varnamelen
+#    - wastedassign
+#    - whitespace
+#    - wrapcheck
+#    - wsl
+#    - zerologlint
+
+issues:
+  exclude-dirs:
+    - docs
+  exclude-rules:
+    - path: integration-test
+      linters:
+        - paralleltest
+        - godot
+    - path: internal/controller/http
+      linters:
+        - godot
